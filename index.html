@@ -1,248 +1,360 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ramanujam | AML & KYC Professional</title>
-
+  <meta name="theme-color" content="#080d19">
+  <meta name="description" content="Ramanujam Pattabiragavan — AML/KYC and Financial Crime Compliance professional with experience in Corporate KYC, EDD, CDD, and periodic reviews.">
+  <title>Ramanujam Pattabiragavan | AML/KYC Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #080d19;
+      --panel: rgba(17, 27, 47, .76);
+      --panel-solid: #111b2f;
+      --text: #edf4ff;
+      --muted: #a5b4ca;
+      --line: rgba(148, 163, 184, .2);
+      --blue: #65d5ff;
+      --violet: #a78bfa;
+      --green: #7ce6c2;
+      --radius: 20px;
+      --max: 1120px;
     }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #e5e7eb;
-      line-height: 1.7;
+      margin: 0; color: var(--text);
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(59,130,246,.15), transparent 34rem),
+        radial-gradient(ellipse at 90% 30%, rgba(139,92,246,.13), transparent 32rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65; overflow-x: hidden;
     }
-
-    header {
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #263248;
+    a { color: inherit; }
+    .progress { position: fixed; z-index: 100; inset: 0 auto auto 0; height: 3px; width: 0; background: linear-gradient(90deg,var(--blue),var(--violet)); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .nav-wrap { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(18px); background: rgba(8,13,25,.78); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; text-decoration: none; white-space: nowrap; }
+    .brand span { color: var(--blue); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .nav-links a { color: var(--muted); font-size: .91rem; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: var(--panel-solid); color: var(--text); padding: 8px 12px; border-radius: 10px; }
+    .hero { min-height: 78vh; display: grid; grid-template-columns: 1.3fr .7fr; align-items: center; gap: 56px; padding-block: 86px 76px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(101,213,255,.28); background: rgba(101,213,255,.07); color: var(--blue); padding: 7px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: .13em; font-size: .72rem; font-weight: 800; }
+    .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 14px var(--green); }
+    h1 { font-size: clamp(2.7rem, 6.5vw, 5.4rem); line-height: 1.04; letter-spacing: -.065em; margin: 22px 0; }
+    .gradient-text { background: linear-gradient(100deg, #f5f8ff 5%, var(--blue) 48%, var(--violet) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { max-width: 690px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 12px 17px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; font-weight: 750; transition: transform .2s, border-color .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--blue); }
+    .btn-primary { color: #06111e; border-color: transparent; background: linear-gradient(100deg,var(--blue),#a5a4ff); }
+    .btn-ghost { background: rgba(255,255,255,.025); }
+    .hero-art { position: relative; min-height: 360px; display: grid; place-items: center; }
+    .orbit { position: absolute; width: min(100%,350px); aspect-ratio: 1; border: 1px solid rgba(101,213,255,.25); border-radius: 50%; animation: spin 24s linear infinite; }
+    .orbit::before, .orbit::after { content: ""; position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 22px var(--blue); top: 13%; left: 19%; }
+    .orbit::after { width: 8px; height: 8px; background: var(--violet); box-shadow: 0 0 20px var(--violet); top: 72%; left: 85%; }
+    .orbit-two { width: min(83%,290px); border-color: rgba(167,139,250,.3); animation-direction: reverse; animation-duration: 18s; }
+    .monogram { width: 210px; aspect-ratio: 1; border-radius: 32%; display: grid; place-items: center; position: relative; z-index: 2; background: linear-gradient(145deg,rgba(101,213,255,.17),rgba(167,139,250,.18)); border: 1px solid rgba(255,255,255,.2); box-shadow: 0 0 80px rgba(101,213,255,.12), inset 0 0 35px rgba(167,139,250,.1); font-size: 4.2rem; font-weight: 900; letter-spacing: -.09em; }
+    .floating-tag { position: absolute; z-index: 3; border: 1px solid var(--line); background: rgba(17,27,47,.9); backdrop-filter: blur(12px); padding: 10px 13px; border-radius: 13px; color: var(--muted); font-size: .82rem; box-shadow: 0 14px 35px rgba(0,0,0,.2); }
+    .tag-one { top: 12%; right: -1%; } .tag-two { bottom: 13%; left: -2%; }
+    .section { padding-block: 76px; }
+    .section-head { max-width: 720px; margin-bottom: 30px; }
+    .kicker { color: var(--blue); text-transform: uppercase; letter-spacing: .16em; font-size: .73rem; font-weight: 850; }
+    h2 { font-size: clamp(1.8rem,4vw,2.8rem); letter-spacing: -.045em; line-height: 1.15; margin: 9px 0 12px; }
+    .section-intro { color: var(--muted); margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 16px; }
+    .card { grid-column: span 4; background: linear-gradient(145deg,rgba(20,32,54,.88),rgba(12,20,36,.88)); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 15px 45px rgba(0,0,0,.12); transition: transform .25s,border-color .25s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(101,213,255,.42); }
+    .card.wide { grid-column: span 6; }
+    .card.full { grid-column: 1 / -1; }
+    .icon-box { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(101,213,255,.2); background: rgba(101,213,255,.08); border-radius: 13px; font-size: 1.2rem; margin-bottom: 17px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    .card p { color: var(--muted); margin: 0; font-size: .95rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .chip { border: 1px solid var(--line); background: rgba(255,255,255,.035); border-radius: 999px; padding: 6px 10px; font-size: .78rem; color: #d6e3f7; }
+    .timeline { position: relative; margin-left: 7px; padding-left: 28px; border-left: 1px solid rgba(101,213,255,.32); display: grid; gap: 18px; }
+    .role { position: relative; padding: 23px 25px; border: 1px solid var(--line); border-radius: 17px; background: rgba(17,27,47,.7); }
+    .role::before { content: ""; position: absolute; width: 11px; height: 11px; border-radius: 50%; left: -34px; top: 30px; background: var(--blue); box-shadow: 0 0 0 5px rgba(101,213,255,.1); }
+    .role-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
+    .role h3 { margin: 0; font-size: 1.12rem; }
+    .role-date { color: var(--blue); font-size: .83rem; font-weight: 700; }
+    .role-title { color: var(--muted); margin: 4px 0 12px; }
+    .role ul { color: var(--muted); padding-left: 20px; margin: 0; }
+    .role li + li { margin-top: 6px; }
+    .cert { display: flex; align-items: flex-start; gap: 20px; }
+    .cert-mark { flex: 0 0 64px; width: 64px; height: 64px; display: grid; place-items: center; border-radius: 18px; font-size: 1.8rem; background: linear-gradient(140deg,rgba(101,213,255,.18),rgba(167,139,250,.18)); border: 1px solid var(--line); }
+    .status { display: inline-block; color: var(--green); border: 1px solid rgba(124,230,194,.28); background: rgba(124,230,194,.08); padding: 3px 9px; border-radius: 999px; font-size: .7rem; font-weight: 850; letter-spacing: .1em; margin-bottom: 8px; }
+    .case-label { color: var(--violet); text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 800; margin-bottom: 10px; }
+    .case-steps { display: grid; gap: 10px; margin-top: 17px; }
+    .case-step { display: grid; grid-template-columns: 28px 1fr; gap: 10px; color: var(--muted); font-size: .92rem; }
+    .case-step span { color: var(--blue); font-weight: 850; }
+    .contact-panel { padding: clamp(25px,5vw,50px); border-radius: 25px; border: 1px solid rgba(101,213,255,.25); background: radial-gradient(ellipse at top right,rgba(167,139,250,.13),transparent 55%),rgba(17,27,47,.7); }
+    .contact-panel p { color: var(--muted); max-width: 700px; }
+    .note { color: #8ea0ba; font-size: .84rem; margin-top: 18px; }
+    footer { border-top: 1px solid var(--line); padding: 25px 0 35px; color: #8494ab; font-size: .86rem; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; gap: 12px; min-height: auto; padding-top: 65px; }
+      .hero-art { min-height: 310px; }
+      .card { grid-column: span 6; }
+      .card.wide { grid-column: span 6; }
+      .tag-one { right: 8%; } .tag-two { left: 8%; }
     }
-
-    header h2 {
-      color: #38bdf8;
-    }
-
-    nav a {
-      color: #e5e7eb;
-      text-decoration: none;
-      margin-left: 18px;
-    }
-
-    section {
-      padding: 65px 8%;
-    }
-
-    .hero {
-      min-height: 65vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(35px, 6vw, 55px);
-      margin-bottom: 15px;
-    }
-
-    .highlight {
-      color: #38bdf8;
-    }
-
-    .hero p, .description {
-      color: #aab6c8;
-      max-width: 700px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      margin-right: 10px;
-      padding: 12px 22px;
-      background: #38bdf8;
-      color: #07111f;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .secondary {
-      background: transparent;
-      color: #38bdf8;
-      border: 1px solid #38bdf8;
-    }
-
-    h2.section-title {
-      font-size: 30px;
-      margin-bottom: 25px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: #151f32;
-      padding: 24px;
-      border: 1px solid #28364b;
-      border-radius: 10px;
-    }
-
-    .card h3 {
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-
-    .card p, li {
-      color: #b8c4d6;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #9ca3af;
-      border-top: 1px solid #263248;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        align-items: flex-start;
-        gap: 10px;
-        flex-direction: column;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 12px;
-      }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px,var(--max)); }
+      nav { min-height: 64px; flex-wrap: wrap; padding-block: 12px; }
+      .menu-toggle { display: inline-block; }
+      .nav-links { display: none; width: 100%; padding: 8px 0 12px; gap: 13px 18px; }
+      .nav-links.open { display: flex; }
+      .hero { padding-block: 55px 45px; }
+      .hero-art { min-height: 275px; }
+      .monogram { width: 160px; font-size: 3.2rem; }
+      .orbit { width: 255px; } .orbit-two { width: 210px; }
+      .floating-tag { font-size: .72rem; }
+      .section { padding-block: 54px; }
+      .card,.card.wide { grid-column: 1 / -1; padding: 21px; }
+      .cert { flex-direction: column; }
+      .role { padding: 19px; }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h2>Ramanujam P</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+  <div class="progress" id="progress"></div>
+
+  <div class="nav-wrap">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">RP<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certification</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
-  </header>
+  </div>
 
-  <section class="hero">
-    <p class="highlight">FINANCIAL CRIME COMPLIANCE PROFESSIONAL</p>
-    <h1>Hi, I'm <span class="highlight">Ramanujam</span></h1>
-    <h2>AML | KYC | EDD | CDD</h2>
-
-    <p>
-      Financial Crime Compliance professional with 6+ years
-      of experience in Corporate KYC, Enhanced Due Diligence,
-      Customer Due Diligence and Periodic Reviews.
-    </p>
-
-    <div>
-      <a class="button" href="#experience">View Experience</a>
-      <a class="button secondary"
-         href="https://www.linkedin.com/in/ramanujam-pattabiragavan-52316a186/"
-         target="_blank" rel="noopener noreferrer">
-        LinkedIn Profile
-      </a>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p class="description">
-      I am an AML/KYC professional experienced in corporate and
-      institutional client due diligence, onboarding, remediation,
-      periodic reviews, ownership verification, sanctions screening,
-      PEP checks and adverse media research. I focus on regulatory
-      compliance, risk assessment, quality and timely case completion.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2 class="section-title">Core Skills</h2>
-    <div class="grid">
-      <div class="card"><h3>Corporate KYC</h3>
-        <p>CDD, EDD, onboarding and periodic reviews.</p></div>
-      <div class="card"><h3>Due Diligence</h3>
-        <p>UBO identification, ownership structures and risk assessment.</p></div>
-      <div class="card"><h3>Financial Crime</h3>
-        <p>PEP, sanctions, adverse media and AML red flags.</p></div>
-      <div class="card"><h3>Research Tools</h3>
-        <p>World-Check, Dow Jones, Orbis and Factiva.</p></div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Capgemini</h3>
-        <p class="highlight">Senior Analyst | May 2025 – Present</p>
-        <p>Corporate KYC, EDD/CDD, periodic reviews and client risk assessment.</p>
+  <main>
+    <section class="hero wrap" id="home">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> Financial Crime Compliance</div>
+        <h1>Ramanujam<br><span class="gradient-text">Pattabiragavan</span></h1>
+        <p class="hero-copy">AML/KYC professional focused on Corporate Due Diligence, Enhanced Due Diligence, Customer Due Diligence and periodic reviews. I bring a risk-based mindset to understanding clients, ownership structures and financial-crime risk.</p>
+        <div class="chips">
+          <span class="chip">Corporate KYC</span>
+          <span class="chip">EDD / CDD</span>
+          <span class="chip">Periodic Review</span>
+          <span class="chip">UBO Research</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="resume.pdf" download>↓ Download Resume</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/ramanujam-pattabiragavan-52316a186/" target="_blank" rel="noopener noreferrer">↗ LinkedIn</a>
+          <a class="btn btn-ghost" href="#contact">Contact me</a>
+        </div>
+        <p class="note">Recruiter-friendly portfolio · Responsive design · GitHub Pages ready</p>
       </div>
-
-      <div class="card">
-        <h3>KPMG</h3>
-        <p class="highlight">KYC / EDD Analyst</p>
-        <p>End-to-end due diligence, onboarding and client reviews.</p>
+      <div class="hero-art" aria-label="Decorative animated RP monogram">
+        <div class="orbit"></div><div class="orbit orbit-two"></div>
+        <div class="monogram">RP</div>
+        <div class="floating-tag tag-one">EDD · CDD</div>
+        <div class="floating-tag tag-two">Risk-based due diligence</div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Sundaram Business Services</h3>
-        <p class="highlight">KYC Analyst</p>
-        <p>Australian mutual fund onboarding and due diligence.</p>
+    <section class="section wrap reveal" id="about">
+      <div class="section-head">
+        <div class="kicker">Profile</div>
+        <h2>Compliance with context.<br><span class="gradient-text">Due diligence with purpose.</span></h2>
+        <p class="section-intro">I support client due diligence through research, ownership analysis, risk identification and clear documentation. My work has covered corporate and institutional client profiles, onboarding, remediation and periodic review processes.</p>
       </div>
-
-      <div class="card">
-        <h3>Accenture</h3>
-        <p class="highlight">AML / KYC Analyst</p>
-        <p>Transaction monitoring, sanctions screening and KYC operations.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="icon-box">⌕</div><h3>Research & Verification</h3>
+          <p>Reviewing company records, registration details, corporate structures and available official sources to build a clear client profile.</p>
+        </article>
+        <article class="card">
+          <div class="icon-box">◇</div><h3>Risk Assessment</h3>
+          <p>Considering ownership, control, PEP exposure, sanctions indicators and adverse media in line with applicable procedures.</p>
+        </article>
+        <article class="card">
+          <div class="icon-box">✓</div><h3>Case Documentation</h3>
+          <p>Recording findings, explaining discrepancies, maintaining supporting evidence and progressing cases within defined SLAs.</p>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="certifications">
-    <h2 class="section-title">Certification</h2>
-    <div class="card">
-      <h3>Certified Anti Money Expert (CAME)</h3>
-      <p>Indiaforensic / Indian Forensic Academy</p>
-    </div>
-  </section>
+    <section class="section wrap reveal" id="skills">
+      <div class="section-head">
+        <div class="kicker">Core expertise</div>
+        <h2>Skills & knowledge areas</h2>
+        <p class="section-intro">A practical mix of client due diligence, research, screening and case management skills.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon-box">◎</div><h3>Corporate KYC</h3><p>Client onboarding, remediation, periodic reviews and entity profile assessment.</p><div class="chips"><span class="chip">CDD</span><span class="chip">EDD</span><span class="chip">Periodic review</span></div></article>
+        <article class="card"><div class="icon-box">⌘</div><h3>Ownership & Control</h3><p>Mapping ownership structures and identifying beneficial owners and control relationships.</p><div class="chips"><span class="chip">UBO</span><span class="chip">Shareholders</span><span class="chip">Directors</span></div></article>
+        <article class="card"><div class="icon-box">◉</div><h3>Screening & Research</h3><p>Reviewing PEP, sanctions and adverse-media results using approved sources and procedures.</p><div class="chips"><span class="chip">PEP</span><span class="chip">Sanctions</span><span class="chip">Adverse media</span></div></article>
+        <article class="card"><div class="icon-box">⌂</div><h3>Corporate Research</h3><p>Using official registries, corporate disclosures and company documents to corroborate client information.</p><div class="chips"><span class="chip">Company registry</span><span class="chip">Financials</span><span class="chip">Ownership</span></div></article>
+        <article class="card"><div class="icon-box">▤</div><h3>Tools & Platforms</h3><p>Experience with research and screening platforms, including tools used for corporate information and risk research.</p><div class="chips"><span class="chip">World-Check</span><span class="chip">Dow Jones</span><span class="chip">Orbis</span><span class="chip">Factiva</span></div></article>
+        <article class="card"><div class="icon-box">◷</div><h3>Quality & Delivery</h3><p>Evidence-based case notes, discrepancy resolution, stakeholder coordination and SLA-focused case completion.</p><div class="chips"><span class="chip">Audit trail</span><span class="chip">Stakeholders</span><span class="chip">SLA</span></div></article>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2 class="section-title">Let's Connect</h2>
-    <p class="description">
-      Open to opportunities in AML, KYC, EDD, CDD and Financial Crime Compliance.
-    </p>
-    <a class="button"
-       href="https://www.linkedin.com/in/ramanujam-pattabiragavan-52316a186/"
-       target="_blank" rel="noopener noreferrer">
-      Connect on LinkedIn
-    </a>
-  </section>
+    <section class="section wrap reveal" id="experience">
+      <div class="section-head">
+        <div class="kicker">Career journey</div>
+        <h2>Professional experience</h2>
+        <p class="section-intro">Experience across financial services and compliance operations. Please verify role titles and dates against your resume before publishing.</p>
+      </div>
+      <div class="timeline">
+        <article class="role">
+          <div class="role-top"><h3>Capgemini</h3><span class="role-date">May 2025 – Present</span></div>
+          <div class="role-title">Senior Analyst / AML-KYC Analyst · Corporate KYC</div>
+          <ul>
+            <li>Conduct corporate and institutional client due diligence, including EDD/CDD and periodic reviews.</li>
+            <li>Research company records, ownership structures, directors, shareholders and ultimate beneficial owners.</li>
+            <li>Review screening and adverse-media results, document discrepancies and coordinate case resolution with stakeholders.</li>
+          </ul>
+        </article>
+        <article class="role">
+          <div class="role-top"><h3>KPMG</h3><span class="role-date">Aug 2024 – May 2025</span></div>
+          <div class="role-title">KYC / EDD Analyst</div>
+          <ul>
+            <li>Supported end-to-end due diligence for client onboarding and review cases.</li>
+            <li>Reviewed client information and supporting documents, escalating gaps and risk indicators in line with procedures.</li>
+          </ul>
+        </article>
+        <article class="role">
+          <div class="role-top"><h3>Sundaram Business Services</h3><span class="role-date">Aug 2023 – Apr 2024</span></div>
+          <div class="role-title">KYC Analyst · Mutual Funds</div>
+          <ul>
+            <li>Supported Australian mutual-fund onboarding and related client due diligence checks.</li>
+            <li>Validated documentation and maintained clear records for case processing and follow-up.</li>
+          </ul>
+        </article>
+        <article class="role">
+          <div class="role-top"><h3>Accenture</h3><span class="role-date">Jul 2019 – Mar 2023</span></div>
+          <div class="role-title">AML / KYC Analyst</div>
+          <ul>
+            <li>Worked across AML operations including transaction monitoring, sanctions screening and KYC activities.</li>
+            <li>Reviewed alerts and available customer information, documented findings and escalated cases according to procedures.</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note">Use only responsibilities and tools you can confidently explain in an interview. If your official titles differ, update them here.</p>
+    </section>
+
+    <section class="section wrap reveal" id="certifications">
+      <div class="section-head">
+        <div class="kicker">Professional development</div>
+        <h2>Certification</h2>
+      </div>
+      <div class="card full">
+        <div class="cert">
+          <div class="cert-mark">🏅</div>
+          <div>
+            <span class="status">COMPLETED</span>
+            <h3>Certified Anti Money Expert (CAME)</h3>
+            <p>Indiaforensic / Indian Forensic Academy</p>
+            <p class="note">Add your certificate image or credential verification link only if you want it publicly visible and it contains no sensitive personal details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="case-studies">
+      <div class="section-head">
+        <div class="kicker">Applied knowledge</div>
+        <h2>Illustrative case studies</h2>
+        <p class="section-intro">Fictional examples to demonstrate an analytical approach. These are not client cases and do not disclose employer-confidential information.</p>
+      </div>
+      <div class="grid">
+        <article class="card wide">
+          <div class="case-label">Case study 01 · Fictional scenario</div>
+          <h3>Ownership structure & UBO review</h3>
+          <p>A hypothetical corporate client has multiple ownership layers and incomplete information on an intermediate entity.</p>
+          <div class="case-steps">
+            <div class="case-step"><span>01</span><div>Gather corporate filings and available official registry records.</div></div>
+            <div class="case-step"><span>02</span><div>Map ownership and control through each entity in the structure.</div></div>
+            <div class="case-step"><span>03</span><div>Identify information gaps, request evidence and document the rationale for the UBO assessment.</div></div>
+          </div>
+        </article>
+        <article class="card wide">
+          <div class="case-label">Case study 02 · Fictional scenario</div>
+          <h3>Address discrepancy & adverse media</h3>
+          <p>A hypothetical company record lists an address that differs from another source, while a screening result returns a possible media match.</p>
+          <div class="case-steps">
+            <div class="case-step"><span>01</span><div>Compare source dates, reliability and the purpose of each address field.</div></div>
+            <div class="case-step"><span>02</span><div>Assess identifiers to distinguish a potential match from a false positive.</div></div>
+            <div class="case-step"><span>03</span><div>Record evidence, seek clarification where required and escalate unresolved risk under policy.</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="contact">
+      <div class="contact-panel">
+        <div class="kicker">Let's connect</div>
+        <h2>Looking for the next opportunity<br><span class="gradient-text">in Financial Crime Compliance.</span></h2>
+        <p>I am interested in relevant opportunities across AML, Corporate KYC, EDD/CDD, periodic review and financial-crime compliance. Please connect with me on LinkedIn or review my resume.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/ramanujam-pattabiragavan-52316a186/" target="_blank" rel="noopener noreferrer">↗ Connect on LinkedIn</a>
+          <a class="btn btn-ghost" href="resume.pdf" download>↓ Download Resume</a>
+        </div>
+        <p class="note">Before publishing: add your current resume as <strong>resume.pdf</strong> in the same repository folder as this file. Do not publish your personal phone number or email unless you want them public.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © 2026 Ramanujam P | AML & KYC Portfolio
+    <div class="wrap">© <span id="year"></span> Ramanujam Pattabiragavan · AML/KYC Portfolio</div>
   </footer>
+
+  <script>
+    const progress = document.getElementById('progress');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (maxScroll > 0 ? window.scrollY / maxScroll * 100 : 0) + '%';
+    });
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  </script>
 </body>
 </html>
